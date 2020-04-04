@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="text-center" style="padding-bottom: 50px;">
+        <h1>Register Now</h1>
+    </div>
+    <form>
+        <div class="form-group">
+            <input class="form-control" name="adultcount" placeholder="Enter Adult Count"
+                [(ngModel)]="thedata.AdultCount">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="childcount" placeholder="Enter Child Count"
+                [(ngModel)]="thedata.ChildCount">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="infantcount" placeholder="Enter Infant Count"
+                [(ngModel)]="thedata.InfantCount">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="journeytype" placeholder="Enter Journey Type"
+                [(ngModel)]="thedata.JourneyType">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="cabinclass" placeholder="Enter Cabin Class"
+                [(ngModel)]="thedata.CabinClass">
+        </div>
+        <label *ngFor="let flight of selectedairlines">
+            <input type="checkbox" name="{{flight.name}}" [(ngModel)]="flight.isselected" /> {{flight.name}}
+        </label>
+        <div class="form-group">
+            <input class="form-control" name="origin" placeholder="Enter Origin"
+                [(ngModel)]="thedata.Segments[0].Origin">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="destination" placeholder="Enter destination"
+                [(ngModel)]="thedata.Segments[0].Destination">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="departuredate" placeholder="Enter Departutre date"
+                [(ngModel)]="thedata.Segments[0].DepartureDate">
+        </div>
+        <button class="btn-success btn" (click)="submit()">SUBMIT</button>
+    </form>
+</div>
